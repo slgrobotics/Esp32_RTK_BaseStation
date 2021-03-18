@@ -17,8 +17,11 @@ Send your suggestions to slg@quakemap.com  - beer accepted at https://www.paypal
 
 Please support SparkFun.com - buy their awesome products! My pair of F9P breakboards works flawlessly and were easy to set up.
 
+The code compiles under Arduino IDE with ESP32 additions. My station uses NodeMCU-32S, there are better more recent options - they should work fine, although pinout may be slightly different. Schematics is in the Media folder, with photos of my very DIY unit. If you don't have NeoPixels - no worries, LCD shows all you need.
+
 Please don't forget to set YOUR base station coordinates, see GNSS.ino tab around line 120
-See "secrets.h" tab for credentials, set yours - for your WiFi network and the Caster
+
+See "secrets.h" tab for credentials; set yours - for your WiFi network and the Caster
 
 RTK2GO.com requires you to register as a base station data provider, it is easy and they respond within several hours.
  
