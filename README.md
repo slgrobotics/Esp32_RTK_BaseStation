@@ -2,7 +2,7 @@
 
 ## sends u-Blox ZED-F9P RTCM correction data to rtk2go.com NTRIP caster
 
-This is heavily modified example NTRIP Server from SparkFun GNSS Library V2.0, u-Blox F9P section.
+This is heavily modified example NTRIP Server from SparkFun GNSS Library V2.0, u-Blox F9P section. It presents itself as "NTRIP SparkFun_RTK_Surveyor-SG" on the "agents" page: http://rtk2go.com:2101/SNIP::N-AGENT
 
 The idea is to:
    - let the station work hands-free forever
