@@ -71,13 +71,22 @@ void setupGNSS()
   else
     Trace("OK: GPS NMEA on I2C disabled");
 
-  // Enable necessary RTCM sentences
-  response &= myGNSS.enableRTCMmessage(UBX_RTCM_1005, COM_PORT_I2C, 1); // Enable message 1005 to output through UART2, message every second
-  response &= myGNSS.enableRTCMmessage(UBX_RTCM_1074, COM_PORT_I2C, 1);
-  response &= myGNSS.enableRTCMmessage(UBX_RTCM_1084, COM_PORT_I2C, 1);
-  response &= myGNSS.enableRTCMmessage(UBX_RTCM_1094, COM_PORT_I2C, 1);
-  response &= myGNSS.enableRTCMmessage(UBX_RTCM_1124, COM_PORT_I2C, 1);
-  response &= myGNSS.enableRTCMmessage(UBX_RTCM_1230, COM_PORT_I2C, 10); // Enable message every 10 seconds
+  // Enable necessary RTCM sentences. ...\libraries\SparkFun_u-blox_GNSS_Arduino_Library\src\SparkFun_u-blox_GNSS_Arduino_Library.h
+  // Some commented out aren't supported by SparkFun library. The MSM4 10*4's are replaced by MSM7 10*7 higher precision ones.
+  //response &= myGNSS.enableRTCMmessage(UBX_RTCM_1004, COM_PORT_I2C, 1);  // Enable message 1004 to output through UART2, message every second
+  response &= myGNSS.enableRTCMmessage(UBX_RTCM_1005, COM_PORT_I2C, 1);    // Stationary RTK reference ARP. Enable to output through UART2, message every second
+  //response &= myGNSS.enableRTCMmessage(UBX_RTCM_1033, COM_PORT_I2C, 10); // GPS module and antenna descriptor, every 10 seconds
+  //response &= myGNSS.enableRTCMmessage(UBX_RTCM_1074, COM_PORT_I2C, 1);  // GPS MSM4
+  response &= myGNSS.enableRTCMmessage(UBX_RTCM_1077, COM_PORT_I2C, 1);    // GPS MSM7
+  //response &= myGNSS.enableRTCMmessage(UBX_RTCM_1084, COM_PORT_I2C, 1);
+  response &= myGNSS.enableRTCMmessage(UBX_RTCM_1087, COM_PORT_I2C, 1);    // GLONASS MSM7
+  //response &= myGNSS.enableRTCMmessage(UBX_RTCM_1094, COM_PORT_I2C, 1);
+  response &= myGNSS.enableRTCMmessage(UBX_RTCM_1097, COM_PORT_I2C, 1);    // Galileo MSM7
+  //response &= myGNSS.enableRTCMmessage(UBX_RTCM_1124, COM_PORT_I2C, 1);
+  response &= myGNSS.enableRTCMmessage(UBX_RTCM_1127, COM_PORT_I2C, 1);    // BeiDou MSM7
+  response &= myGNSS.enableRTCMmessage(UBX_RTCM_1230, COM_PORT_I2C, 10);   // GLONASS code-phase biases. Enable message every 10 seconds
+  response &= myGNSS.enableRTCMmessage(UBX_RTCM_4072_0, COM_PORT_I2C, 1);  // Reference station PVT (ublox proprietary RTCM message)
+  response &= myGNSS.enableRTCMmessage(UBX_RTCM_4072_1, COM_PORT_I2C, 1);  // Additional reference station information (ublox proprietary RTCM message)
 
   if (response == false)
   {

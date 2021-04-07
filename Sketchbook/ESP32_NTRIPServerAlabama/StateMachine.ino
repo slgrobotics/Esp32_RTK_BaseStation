@@ -126,6 +126,15 @@ void workTheStateMachine()
             state = STATE_BREAK_FOR_NO_RTCM;
           }
           
+          if (_now - lastSentRTCM_ms > maxTimeBeforeHangup_ms)
+          {
+            // this could be IP provider outage, while WiFi is on, Internet is not available:
+            Error("Send to caster timeout. Disconnecting...");
+            closeCasterConnection();
+            lastWentToBreak = _now;
+            state = STATE_BREAK_FOR_NO_RTCM;
+          }
+          
           break;
         
         case 1:   // had good RTCM data, sent to Caster successfully
