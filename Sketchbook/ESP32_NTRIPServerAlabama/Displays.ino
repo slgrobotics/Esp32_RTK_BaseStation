@@ -109,7 +109,7 @@ bool runner = true;
 
 void displayStateWorking(unsigned long nBytes)
 {
-  snprintf(traceBuffer, sizeof(traceBuffer), runner ? "Working   %d" : "Working...%d", connectionAttempts.size());
+  snprintf(traceBuffer, sizeof(traceBuffer), runner ? "Wrk   %d/%d/%d" : "Wrk...%d/%d/%d", connectionAttempts.size(), cntErrsReceivedRTCM_ms, cntErrsSentRTCM_ms);
   runner = !runner;
   textLcdLine1(traceBuffer);
   if(nBytes > 10485760)

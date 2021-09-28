@@ -84,10 +84,16 @@ SOFTWARE.
 // this is optional hardware, four neopixels on pin 26, using 3.3V<->5V level shifter:
 #define HAS_NEOPIXELS
 
+// put your network and caster credentials here:
+#include "secrets.h"
+
 // see https://github.com/rlogiacco/CircularBuffer
 //     https://www.arduino.cc/reference/en/libraries/circularbuffer/
 #define CIRCULAR_BUFFER_INT_SAFE
 #include <CircularBuffer.h>
+
+// get ESP32 Mail Client by Mobizt, V2.1.6+
+#include <ESP32_MailClient.h>
 
 //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 // Basic Connection settings to RTK2Go NTRIP Caster - See secrets.h for mount specific credentials
@@ -111,6 +117,9 @@ unsigned long lastReceivedRTCM_ms = 0;      // Time of last data received from G
 unsigned long lastSentRTCM_ms = 0;          // Time of last data pushed to socket
 unsigned long lastWentToBreak = 0;          // when went to break for no RTCM
 unsigned long lastReport_ms = 0;            // Time of last report of bytes sent to Serial
+
+unsigned long cntErrsReceivedRTCM_ms = 0;   // absolute error counters, to see where the problem might be
+unsigned long cntErrsSentRTCM_ms = 0;
 
 unsigned long serverBytesSent = 0;          // Just a running total, on ESP32 4 bytes, max 4,294,967,295 (4GB)
                                             // at 20MB/day it takes ~200 days to rollover

@@ -1,9 +1,6 @@
 
 #include <WiFi.h>
 
-// put your network and caster credentials here:
-#include "secrets.h"
-
 WiFiClient client;
 
 bool setupWifiNetwork()

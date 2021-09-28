@@ -122,6 +122,7 @@ void workTheStateMachine()
           {
             Error("RTCM timeout. Disconnecting...");
             closeCasterConnection();
+            cntErrsReceivedRTCM_ms++;
             lastWentToBreak = _now;
             state = STATE_BREAK_FOR_NO_RTCM;
           }
@@ -131,6 +132,7 @@ void workTheStateMachine()
             // this could be IP provider outage, while WiFi is on, Internet is not available:
             Error("Send to caster timeout. Disconnecting...");
             closeCasterConnection();
+            cntErrsSentRTCM_ms++;
             lastWentToBreak = _now;
             state = STATE_BREAK_FOR_NO_RTCM;
           }

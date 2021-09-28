@@ -1,10 +1,8 @@
-//Your WiFi credentials
-const char* ssid = "TRex";
-const char* password =  "hasBigTeeth";
 
-//Your RTK2GO mount point credentials
-const char* mntpnt_pw = "WR5wRo4H";
-const char* mntpnt = "bldr_dwntwn2";
+// REPLACE WITH YOUR NETWORK CREDENTIALS:
+
+const char* ssid = "your_network_id_here";
+const char* password =  "your_password_here";
 
 // To send Email using Gmail use port 465 (SSL) and SMTP Server smtp.gmail.com
 // see https://randomnerdtutorials.com/esp32-send-email-smtp-server-arduino-ide/ - how to set up Google account
