@@ -34,3 +34,9 @@ See the `secrets.h` tab for credentials. Set your own values for your Wi-Fi netw
 Thank you for your interest.
 
 -- Sergei Grichine
+
+## Check these links:
+
+- http://rtk2go.com - RTK Casters home page
+- http://rtk2go.com:2101/SNIP::N-AGENT - agents list
+- http://rtk2go.com:2101/SNIP::STATUS - current status
