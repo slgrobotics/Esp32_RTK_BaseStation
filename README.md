@@ -1,30 +1,36 @@
-# Esp32 RTK BaseStation
+# ESP32 RTK Base Station
 
-## sends u-Blox ZED-F9P RTCM correction data to rtk2go.com NTRIP caster
+## Sends u-blox ZED-F9P RTCM correction data to the rtk2go.com NTRIP caster.
 
-This is heavily modified example NTRIP Server from SparkFun GNSS Library V2.0, u-Blox F9P section. It presents itself as "NTRIP SparkFun_RTK_Surveyor-SG" on the "agents" page: http://rtk2go.com:2101/SNIP::N-AGENT
+This is a heavily modified example of an NTRIP Server from the SparkFun GNSS Library v2.0 (u-blox F9P section).
+It presents itself as "*NTRIP SparkFun_RTK_Surveyor-SG*" on the "*agents*" page:
+http://rtk2go.com:2101/SNIP::N-AGENT
 
 The idea is to:
-   - let the station work hands-free forever
-   - without USB connection to laptop
-   - handle power outages, restore to normal operation
-   - handle network and Caster glitches
-   - avoid being banned by Caster for idle or numerous connections
-   - provide ample visual indication about the station's status 
+- Let the station run hands-free indefinitely
+- Operate without a USB connection to a laptop
+- Recover automatically after power outages
+- Handle network and caster glitches
+- Avoid being banned by the caster for idle or excessive connections
+- Provide clear visual indication of the station's status
 
-This code is free (as free beer) - no guarantees or liability of any kind. See MIT license below. Use at your own risk.
+This code is free (as in free beer). No guarantees or liability of any kind. See the MIT license below. Use at your own risk.
 
-Please support SparkFun.com - buy their awesome products! My pair of F9P breakboards works flawlessly and were easy to set up.
+Please support SparkFun.com — buy their awesome products! My pair of F9P breakout boards works flawlessly and was easy to set up.
 
-The code compiles under Arduino IDE with ESP32 additions. My station uses NodeMCU-32S, there are better more recent options - they should work fine, although pinout may be slightly different. Schematics is in the Media folder, with photos of my very DIY unit. If you don't have NeoPixels - no worries, LCD shows all you need.
+The code compiles in the Arduino IDE with ESP32 support installed. My station uses a NodeMCU-32S.
+Newer boards should also work, although the pinout may differ slightly.
 
-For general information on ESP32 GPIO pins usage view this [video](https://youtu.be/E4LxQvyeiWw?si=tCEFZD2FUFwvOoGX).
+The schematic is in the Media folder, along with photos of my very DIY unit. If you don't have NeoPixels — no worries; the LCD shows everything you need.
 
-Please don't forget to set YOUR base station coordinates, see GNSS.ino tab around line 120
+For general information on ESP32 GPIO pin usage, see this [video](https://youtu.be/E4LxQvyeiWw).
 
-See "secrets.h" tab for credentials; set yours - for your WiFi network and the Caster
+Please don't forget to set your base station coordinates. See the `GNSS.ino` tab around line 120.
 
-RTK2GO.com requires you to register as a base station data provider, it is easy and they respond within several hours.
- 
-Thank you for your interest,
+See the `secrets.h` tab for credentials. Set your own values for your Wi-Fi network and the caster.
+
+*RTK2GO.com* requires you to register as a base station data provider. The process is easy and they usually respond within a few hours.
+
+Thank you for your interest.
+
 -- Sergei Grichine
