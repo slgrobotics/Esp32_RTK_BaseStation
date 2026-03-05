@@ -13,11 +13,12 @@ The idea is to:
    - provide ample visual indication about the station's status 
 
 This code is free (as free beer) - no guarantees or liability of any kind. See MIT license below. Use at your own risk.
-Send your suggestions to slg@quakemap.com  - beer accepted at https://www.paypal.com/paypalme/vitalbytes
 
 Please support SparkFun.com - buy their awesome products! My pair of F9P breakboards works flawlessly and were easy to set up.
 
 The code compiles under Arduino IDE with ESP32 additions. My station uses NodeMCU-32S, there are better more recent options - they should work fine, although pinout may be slightly different. Schematics is in the Media folder, with photos of my very DIY unit. If you don't have NeoPixels - no worries, LCD shows all you need.
+
+For general information on ESP32 GPIO pins usage view this [video](https://youtu.be/E4LxQvyeiWw?si=tCEFZD2FUFwvOoGX).
 
 Please don't forget to set YOUR base station coordinates, see GNSS.ino tab around line 120
 
